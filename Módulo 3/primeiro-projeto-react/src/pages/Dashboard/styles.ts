@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import styled, { css } from 'styled-components';
 import { shade } from 'polished';
 
@@ -28,11 +29,7 @@ export const Form = styled.form<FormProps>`
     border: 2px solid #fff;
     border-right: 0;
 
-    ${props =>
-    props.hasError &&
-    css`
-        border-color: #c53030;
-      `}
+    ${props => props.hasError && css`border-color: #c53030;`}
 
     &::placeholder {
       color: #a8a8b3;
