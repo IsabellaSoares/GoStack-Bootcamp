@@ -1,12 +1,15 @@
 import React from 'react';
-import { View, StatusBar } from 'react-native';
+import { View, StatusBar, Image } from 'react-native';
 
-import { Container } from './styles';
+import { Container, Title } from './styles';
+
+import logoImg from '../../assets/logo.png';
 
 const SignIn: React.FC = () => (
   <Container>
-    <StatusBar barStyle='light-content' backgroundColor='#312e38' />
-    <View style={{ flex: 1, backgroundColor: '#312e38' }} />
+    <Image source={logoImg} />
+
+    <Title>Faça seu logon</Title>
   </Container>
 );
 
