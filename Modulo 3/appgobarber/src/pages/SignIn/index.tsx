@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useCallback, useRef } from 'react';
 import { Image, View, ScrollView, KeyboardAvoidingView, Platform } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import { useNavigation } from '@react-navigation/native';
+import { Form } from '@unform/mobile';
+import { FormHandles } from '@unform/core';
 
 import { Container, Title, ForgotPassword, ForgotPasswordText, CreateAccountButton, CreateAccountText } from './styles';
 
@@ -12,6 +14,11 @@ import logoImg from '../../assets/logo.png';
 
 const SignIn: React.FC = () => {
   const navigation = useNavigation();
+  const formRef = useRef<FormHandles>(null);
+
+  const handleSubmit = useCallback((data: object) => {
+    console.log(data);
+  }, []);
 
   return (
     <>
@@ -28,10 +35,12 @@ const SignIn: React.FC = () => {
               <Title>Faça seu logon</Title>
             </View>
 
-            <Input name='email' icon='mail' placeholder='E-mail' />
-            <Input name='password' icon= 'lock' placeholder='Senha' />
+            <Form ref={formRef} onSubmit={handleSubmit} style={{ width: '100%' }}>
+              <Input name='email' icon='mail' placeholder='E-mail' />
+              <Input name='password' icon= 'lock' placeholder='Senha' />
 
-            <Button onPress={() => {}}>Entrar</Button>
+              <Button onPress={() => { formRef.current?.submitForm() }}>Entrar</Button>
+            </Form>
 
             <ForgotPassword onPress={() => {}}>
               <ForgotPasswordText>
