@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { parseISO } from 'date-fns';
 import { getCustomRepository } from 'typeorm';
 
-import AppointmentsRepository from '../../modules/appoinments/repositories/AppointmentsRepository';
+import AppointmentsRepository from '../../../../modules/appoinments/repositories/AppointmentsRepository';
 import CreateAppointmentService from '../services/CreateAppointmentService';
 
 import ensureAuthenticated from '../middlewares/ensureAuthenticated';
