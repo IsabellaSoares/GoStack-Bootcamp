@@ -10,3 +10,9 @@
 - Melhorias da camada de Infra com a criação de interfaces, seguindo o _Liskov Substitution Principle_ (SOLID)
 - _Dependency Inversion Principle_ (SOLID)
 - DTO (Data Transfer Object)
+
+### Testes e TDD
+
+- Diferenças entre Testes Unitários, Testes de Integração e Testes E2E
+- Jest
+- Coverage Reports
